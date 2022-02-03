@@ -48,16 +48,16 @@ contact.company_id = apple.id
 contact.save
 
 # 3. write code to display how many contacts are in the database AND each contact's info (name, email), e.g.:
-andy = Contact.where({first_name: "Andy"})[0]
-craig = Contact.where({first_name: "Craig"})[0]
-elon = Contact.where({first_name: "Elon"})[0]
-tim = Contact.where({first_name: "Tim"})[0]
+# andy = Contact.where({first_name: "Andy"})[0]
+# craig = Contact.where({first_name: "Craig"})[0]
+# elon = Contact.where({first_name: "Elon"})[0]
+# tim = Contact.where({first_name: "Tim"})[0]
 
-puts "Contacts: #{Contact.all.count}"
-puts "#{andy.first_name} - #{andy.email}"
-puts "#{craig.first_name} - #{craig.email}"
-puts "#{elon.first_name} - #{elon.email}"
-puts "#{tim.first_name} - #{tim.email}"
+# puts "Contacts: #{Contact.all.count}"
+# puts "#{andy.first_name} - #{andy.email}"
+# puts "#{craig.first_name} - #{craig.email}"
+# puts "#{elon.first_name} - #{elon.email}"
+# puts "#{tim.first_name} - #{tim.email}"
 
 #inefficient way to do it
 
