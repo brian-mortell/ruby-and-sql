@@ -23,7 +23,29 @@ Activity.destroy_all
 # Activity is the join model between Salesperson and Contact
 # Add the relevant associations to the models.
 
+brian = Salesperson.where({first_name: "Brian"})[0]
+puts brian.id
+ben = Salesperson.where({first_name: "Ben"})[0]
+puts ben.id
+tim = Contact.where({first_name: "Tim"})[0]
+puts tim.id
+elon = Contact.where({first_name: "Elon"})[0]
+puts elon.id
+
+
 # 5. Insert at least 2 activities into the activities table
+
+activity = Activity.new
+activity.salesperson_id = brian.id
+activity.contact_id = tim.id
+activity.notes = "Grabbed tacos"
+activity.save
+
+activity = Activity.new
+activity.salesperson_id = ben.id
+activity.contact_id = elon.id
+activity.notes = "Liked a tweet"
+activity.save
 
 # 6. Loop through the salespeople and display their activites and related contacts, e.g.:
 
@@ -33,3 +55,25 @@ Activity.destroy_all
 #
 # Ben Block
 # Liked a tweet - Elon Musk
+
+
+activities = Activity.all
+for activity in activities
+        puts "#{activity.salesperson.first_name} #{activity.salesperson.last_name}"
+    activities = Activity.all
+    for activity in activities
+        puts "#{activity.notes} - #{activity.contact.first_name} #{activity.contact.last_name}"
+    end
+    puts ""
+end
+
+# for company in companies
+#     puts company.name
+#     contacts = company.contacts
+#     for contact in contacts
+#     puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
+#     end
+#     puts ""
+# end
+
+
