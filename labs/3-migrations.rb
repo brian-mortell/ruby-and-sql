@@ -57,10 +57,10 @@ activity.save
 # Liked a tweet - Elon Musk
 
 
-activities = Activity.all
-for activity in activities
-        puts "#{activity.salesperson.first_name} #{activity.salesperson.last_name}"
-    activities = Activity.all
+salespeople = Salesperson.all
+for salesperson in salespeople
+    puts "#{salesperson.first_name} #{salesperson.last_name}"
+    activities = salesperson.activities
     for activity in activities
         puts "#{activity.notes} - #{activity.contact.first_name} #{activity.contact.last_name}"
     end
